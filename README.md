@@ -9,5 +9,5 @@
 
 ---
 
-App URL: https://edb.forms.vercel.app
+App URL: https://advanced-react-form.vercel.app/
 Github Repo URL: https://github.com/eduardobertozi/Advanced-React-Form
