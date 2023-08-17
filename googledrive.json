@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cep-centro-de-estudos",
+  "private_key_id": "22066cdde29bad83ca93d2694558eda9a64083c1",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCifE5RJWc/UfnA\nsnckFTMJHh2ENbxi7eV0wQRocWgc+pSj/oaSbCcoR+x5U8TlK+hA634/OT8JRBBH\nOgpKeJDBrFv90z//VnkbcdpKegcCTR1iutjOz6emoFy7EMcExhHYA44UA0F5NqPz\nY1OAeQ6r0BT27xrLCS6KZ8ZUB5rpkhhug0BXh9ze0xdlsWYDH2yJeU0BBYBqkOU3\nRHd9YyLJ+QnNVWhhspv28RPlG5HLOXjJJCCp1DPPl9WKkuecXsXjvvCkbbbQARHf\nj+Rn9kjHSppLMVVTSkGWFHtmqRQ9YX6VGrkHs9MOjRTqr6q/uBwep4yZnSx0fhtQ\ng3uYKRohAgMBAAECggEAJfbWU6ZiG8zbBneMV81uObykF954UEMWYDOzBHYu5cp0\njWasaazEb2hyq5xzfjpGj1iWjE4jWNZi2UmJ2wGVjPLpIYLIyq+ZJ1zwLIObfKGo\n8ocGnjeti8SfNgQDBC4FQEwAV9O06g3mu7ji6zsdvu4k39dZEsRn7+W0VLDcNKNS\n/hGcotKZJLdaobun7KI4g78xPZr61T+/3lXoYgZdusrtTcI/cNGbrMpdgEhdLBs5\nDxz4O7yYxejWlW5DkkLMFM13xjdJekq7grsUhs6Thl/9HKSnrLr4xCBM21XksGDw\nTf0D5hDjuHsKI3HjS2iqxcNh3SDFDqXnlYw93GzwywKBgQDY7nceTKqqrOuyS8Uz\nGlLIhDf8N/i3T+IQhnV08tKoL4FVMNXAUhFa7Halx63IiKv+6z3KZVZ7LS74cAut\nMDv94G2dpnR3213W8p/0gxLwWdg6WI8lJ2vpwnDX34K+AQabbbH/XUKnG6450R2Y\nQeS1KAfRQY9/OAMIbh+j1hHBYwKBgQC/v6JLPvaCHKE7AMG3ATStN1cEJtg7fu7p\nDV2BWejl6nqldhzH3dvG3WNcvfpDVGJwsO9q6UlxVr2M+fJZ4s4WtGOyRn0PA64+\nFf782CfCgaJMV+JF0LFFOdRBjlfDqUouv0xn/sXnZ9Pv0G+HMGl63iVK8BaIyqVi\nUoxPprFvqwKBgQCPG3GVmXoVMhIjAv1KoxjtktvkFYCMXbSCtlESH4Z80Sn+60J3\npywv0ULMRpgMbK0adFHFDWkpxTrxRelODT3mU4G8uKyozRxwyopfIYEC8iJFC1sT\nZZg5E76hip+TfNXA/3KnRfzMhORA3AUsBnw8TfYqQ5fIk0jc7NkOmhAIhQKBgBE3\n5x30qHQkmAHRXpPNYuqPBpxT1KT7D/8TeSsNZNGIjbzf71OvQ3YHGU4RrTBwmmpe\nKRGjozmvPVQ0eaPCrxjw1+cBV2eKwBHJLd2Ml31q4KUUWzhDtjduKvY8Dvt97zBl\nczn/ccwG0cw+HlW4bjBfVF/3UT61W8aJfRoF8PcDAoGADrLgWhL8wzNnRMAhztcb\np9RDlxReKChegsxETPyYdd/sOuYqbrk6Zvm5RR4kHmlBui8uLnZZ0buJXgvJ2Hbe\nQoq3qrz8xSVuFrpuJRWx1OFc14Qg1/iluHwI3tNd0MM8hVgLgG9Bcz8Wmo6nXr/E\nHORKO9IzqeXFmkjPaqIbS/0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cepgcloud@cep-centro-de-estudos.iam.gserviceaccount.com",
+  "client_id": "116601722956221531469",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cepgcloud%40cep-centro-de-estudos.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
