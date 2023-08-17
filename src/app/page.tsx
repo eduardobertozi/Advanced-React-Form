@@ -12,7 +12,7 @@ export default async function Home() {
       {/* Composition pattern examples*/}
       <Card.Root>
         <Card.Icon icon={Rocket} />
-        <Card.Content title='Seja bem vindo' description='Este é um componente composto' />
+        <Card.Content title='Seja bem vindo' description='Esta é uma descrição' />
         <Card.Actions>
           <Card.Action variant='danger'>{<X />}</Card.Action>
           <Card.Action variant='success'>{<Check />}</Card.Action>
