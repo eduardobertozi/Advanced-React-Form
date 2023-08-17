@@ -1,31 +1,15 @@
-import Link from 'next/link'
-import CustomImage from '@/components/ui/Image'
 import { Suspense } from 'react'
 import { Card } from '@/components/ui/Card'
 import { Check, Rocket, X } from 'lucide-react'
+import CustomImage from '@/components/ui/Image'
+import UserForm from '@/components/User/UserForm'
 
 export default async function Home() {
   return (
-    <main>
-      <header>
-        <nav>
-          <ul className='flex items-start gap-4'>
-            <li><Link href="/atividades">Teste de link</Link></li>
-            <li><Link href="/form">Formulário</Link></li>
-          </ul>
-        </nav>
-      </header>
+    <main className='flex flex-col gap-12 items-center w-full min-h-screen bg-zinc-950 p-12'>
+      
 
-      <Suspense>
-        <CustomImage
-          width={100}
-          height={100}
-          quality={90}
-          src="https://drive.google.com/uc?id=1uAClEgOSe4ISd_lhx5TCIf59Hl0Dz72c"
-          alt="Banner"
-        />
-      </Suspense>
-
+      {/* Composition pattern examples*/}
       <Card.Root>
         <Card.Icon icon={Rocket} />
         <Card.Content title='Seja bem vindo' description='Este é um componente composto' />
@@ -34,6 +18,9 @@ export default async function Home() {
           <Card.Action variant='success'>{<Check />}</Card.Action>
         </Card.Actions>
       </Card.Root>
+
+      <UserForm />
+
     </main>
   )
 }

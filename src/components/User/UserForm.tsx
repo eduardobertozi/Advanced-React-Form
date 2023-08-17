@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import BaseButton from '../ui/Button'
 import { useForm, useFieldArray, FormProvider } from 'react-hook-form'
 import { z } from 'zod'
@@ -53,6 +53,8 @@ type createUserFormData = z.infer<typeof createUserSchema>
 
 /* -------------Component--------------- */
 const UserForm = () => { 
+  const [output, setOutput] = useState('')
+  
   const createUserForm = useForm<createUserFormData>({
     resolver: zodResolver<any>(createUserSchema),
   })
@@ -68,111 +70,122 @@ const UserForm = () => {
     name: 'techs',
   })
 
-  const makeUser = (data: createUserFormData) => {
-    console.log(data)
-  }
-
   const addNewTech = () => {
     if (fields.length < 4) {
       append({ title: '', knowledge: 0 })
     }
   }
+
+  const makeUser = (data: createUserFormData) => {
+    // TODO: Implements supabase files upload
+
+    setOutput(JSON.stringify(data, null, 2))
+    console.log(data) 
+  }
   
   return (
-    <div className='w-full max-w-sm'>
-      <FormProvider {...createUserForm}>
-        <Form.Root 
-          onSubmit={handleSubmit(makeUser)}
-        >
-          <Form.Field>
-            <Form.Label htmlFor='name'>
-              Nome
-            </Form.Label>
-
-            <Form.Input type="text" name='name' />
-            
-            <Form.ErrorMessage field='name' />
-          </Form.Field>
-
-          <Form.Field>
-            <Form.Label htmlFor='email'>
-              Email
-            </Form.Label>
-
-            <Form.Input type="email" name='email' />
-            
-            <Form.ErrorMessage field='email' />
-          </Form.Field>
-          
-          <Form.Field>
-            <Form.Label htmlFor='password'>
-              Senha
-            </Form.Label>
-
-            <Form.Input type="password" name='password' />
-            
-            <Form.ErrorMessage field='password' />
-          </Form.Field>
-
-          <Form.Field>
-            <Form.Label htmlFor='avatar'>
-              Avatar
-            </Form.Label>
-
-            <Form.Input type="file" name='avatar' required />
-            
-            <Form.ErrorMessage field='avatar' />
-          </Form.Field>
-
-          <Form.Field>
-            <Form.Label className='flex items-center justify-between'>
-              Tecnologias
-
-              <button 
-                type='button'
-                onClick={addNewTech}
-                className='text-violet-500 text-sm'
-                disabled={fields.length >= 4}
-              >
-                Add
-              </button>
-            </Form.Label>
-
-            <hr className='my-2'/>
-
-            {fields.map((field, index) => {            
-              const titleField = `techs.${index}.title`
-              const knowledgeField = `techs.${index}.knowledge`
-
-              return (
-                <Form.Field key={field.id}>
-                  <div className='flex gap-2 items-center'>
-                    <Form.Input type='text' name={titleField} className='flex-1' />
-                    <Form.Input type='number' name={knowledgeField} className='w-1/4'/>
-
-                    <button
-                      type='button'
-                      onClick={() => remove(index)}
-                      className='text-red-500'
-                    >
-                      <XCircle size={14} />
-                    </button>
-                  </div>
-                  <Form.ErrorMessage field={titleField} />
-                </Form.Field>  
-              )
-            })}
-          </Form.Field>
-
-          <BaseButton 
-            type='submit'
-            disabled={isSubmitting}
-            className='w-1/3 bg-violet-500 hover:bg-violet-600'
+    <div className='flex gap-4 items-start justify-center w-full'>
+      <div className='max-w-sm w-sm bg-zinc-50 rounded-xl px-8 py-12'>
+        <FormProvider {...createUserForm}>
+          <Form.Root
+            onSubmit={handleSubmit(makeUser)}
           >
-            Enviar
-          </BaseButton>
-        </Form.Root>
-      </FormProvider>
+            <Form.Field>
+              <Form.Label htmlFor='name'>
+                Nome
+              </Form.Label>
+
+              <Form.Input type="text" name='name' />
+
+              <Form.ErrorMessage field='name' />
+            </Form.Field>
+
+            <Form.Field>
+              <Form.Label htmlFor='email'>
+                Email
+              </Form.Label>
+
+              <Form.Input type="email" name='email' />
+
+              <Form.ErrorMessage field='email' />
+            </Form.Field>
+
+            <Form.Field>
+              <Form.Label htmlFor='password'>
+                Senha
+              </Form.Label>
+
+              <Form.Input type="password" name='password' />
+
+              <Form.ErrorMessage field='password' />
+            </Form.Field>
+
+            <Form.Field>
+              <Form.Label htmlFor='avatar'>
+                Avatar
+              </Form.Label>
+
+              <Form.Input type="file" name='avatar' required />
+
+              <Form.ErrorMessage field='avatar' />
+            </Form.Field>
+
+            <Form.Field>
+              <Form.Label className='flex items-center justify-between'>
+                Tecnologias
+
+                <button
+                  type='button'
+                  onClick={addNewTech}
+                  className='text-violet-500 text-sm'
+                  disabled={fields.length >= 4}
+                >
+                  Add
+                </button>
+              </Form.Label>
+
+              <hr className='my-2' />
+
+              {fields.map((field, index) => {
+                const titleField = `techs.${index}.title`
+                const knowledgeField = `techs.${index}.knowledge`
+
+                return (
+                  <Form.Field key={field.id}>
+                    <div className='flex gap-2 items-center'>
+                      <Form.Input type='text' name={titleField} className='flex-1' />
+                      <Form.Input type='number' name={knowledgeField} className='w-1/4' />
+
+                      <button
+                        type='button'
+                        onClick={() => remove(index)}
+                        className='text-red-500'
+                      >
+                        <XCircle size={14} />
+                      </button>
+                    </div>
+                    <Form.ErrorMessage field={titleField} />
+                  </Form.Field>
+                )
+              })}
+            </Form.Field>
+
+            <BaseButton
+              type='submit'
+              disabled={isSubmitting}
+              className='w-1/3 bg-violet-500 hover:bg-violet-600'
+            >
+              Enviar
+            </BaseButton>
+          </Form.Root>
+        </FormProvider>
+      </div>
+
+      {output && (
+        <pre className="text-sm text-zinc-100 p-6 rounded-lg">
+          {output}
+        </pre>
+      )}
     </div>
   )
 }

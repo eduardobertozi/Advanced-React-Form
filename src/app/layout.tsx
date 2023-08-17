@@ -1,10 +1,9 @@
-import './globals.css'
+import '@/styles/globals.css'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'CEP Centro de Estudos Psicanalíticos',
-  description: 'A instituição n° 1 de ensino psicanalítico no Brasil.',
-  keywords: 'ensino, ead, psicanalise, estudo, curso, curso a distância'
+  title: 'Form Validation | Composition Pattern',
+  description: 'A  project developed for learning purposes',
 }
 
 export default function RootLayout({
